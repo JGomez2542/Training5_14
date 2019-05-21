@@ -2,6 +2,7 @@ package com.example.mytrainingapp.activity
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -30,7 +31,8 @@ class MainActivity : AppCompatActivity(), RecyclerTypesAdapter.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         fab.setOnClickListener {
-            snackbar("This is a simple Snackbar", "Close", coordinatorLayout)
+            val intent = Intent(this, ThreadingActivity::class.java)
+            startActivity(intent)
         }
 
         repository = RepositoryImpl(applicationContext)

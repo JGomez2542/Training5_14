@@ -18,7 +18,7 @@ abstract class AnimalDao : BaseDao<Entities.Animal> {
 @Dao
 abstract class PersonDao : BaseDao<Entities.Person> {
     @Query("SELECT * FROM People")
-    abstract fun getPeople(): LiveData<Entities.Person>
+    abstract fun getPeople(): LiveData<List<Entities.Person>>
 
     @Query("SELECT COUNT(id) FROM People")
     abstract fun getCount(): Int
@@ -27,7 +27,7 @@ abstract class PersonDao : BaseDao<Entities.Person> {
 @Dao
 abstract class PlanetDao : BaseDao<Entities.Planet> {
     @Query("SELECT * FROM Planets")
-    abstract fun getPlanet(): LiveData<Entities.Planet>
+    abstract fun getPlanet(): LiveData<List<Entities.Planet>>
 
     @Query("SELECT COUNT(id) FROM Planets")
     abstract fun getCount(): Int

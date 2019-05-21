@@ -1,5 +1,6 @@
 package com.example.mytrainingapp.data.repository
 
+import android.arch.lifecycle.MediatorLiveData
 import android.arch.persistence.room.Room
 import android.content.Context
 import com.example.mytrainingapp.common.DB_NAME
@@ -8,9 +9,10 @@ import com.example.mytrainingapp.data.entities.Entities
 
 class RepositoryImpl(context: Context) : Repository {
 
-    lateinit var database: EntityDatabase
+    private val databaseLiveData: MediatorLiveData<List<Entities>> = MediatorLiveData()
+    private val database: EntityDatabase = Room.databaseBuilder(context, EntityDatabase::class.java, DB_NAME).build()
+
     override val data: List<Entities> by lazy {
-        database = Room.databaseBuilder(context, EntityDatabase::class.java, DB_NAME).build()
         val personList = arrayOf(
             Entities.Person(name = "Jason", age = 32, score = 98, active = true),
             Entities.Person(name = "Jerry", age = 23, score = 48, active = true),
@@ -26,4 +28,18 @@ class RepositoryImpl(context: Context) : Repository {
         }.start()
         personList.toList() + animalList.toList() + planetList.toList()
     }
+
+    override fun getDataFromDb(): MediatorLiveData<List<Entities>> {
+        databaseLiveData.addSource(database.getPersonDao().getPeople()) {
+            databaseLiveData.value = it
+        }
+        databaseLiveData.addSource(database.getAnimalDao().getAnimals()) {
+            databaseLiveData.value = it
+        }
+        databaseLiveData.addSource(database.getPlanetDao().getPlanet()) {
+            databaseLiveData.value = it
+        }
+        return databaseLiveData
+    }
+
 }
