@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyTrainingApp</string>
+    <string name="collapsing_toolbar">Collapsing Toolbar</string>
+</resources>
