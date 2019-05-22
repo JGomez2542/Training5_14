@@ -1,4 +1,4 @@
-package com.example.mytrainingapp.data.db
+package com.example.mytrainingapp.data.db.base
 
 import android.arch.persistence.room.Delete
 import android.arch.persistence.room.Insert

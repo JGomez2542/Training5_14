@@ -41,5 +41,4 @@ class RepositoryImpl(context: Context) : Repository {
         }
         return databaseLiveData
     }
-
 }
