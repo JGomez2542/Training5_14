@@ -1,6 +1,7 @@
 package com.example.mytrainingapp.activity
 
 import android.arch.lifecycle.Observer
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -142,6 +143,11 @@ class ThreadingActivity : AppCompatActivity(), CoroutineScope, Handler.Callback,
                         }
                     }
                 }
+            }
+
+            R.id.btnStartServiceActivity -> {
+                val intent = Intent(this, ServiceActivity::class.java)
+                startActivity(intent)
             }
         }
     }

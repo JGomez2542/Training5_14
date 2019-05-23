@@ -55,4 +55,11 @@
             android:id="@+id/btnStartGlobalCoroutine"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
+    <Button
+            android:text="Start Service Activity"
+            android:onClick="onClick"
+            android:id="@+id/btnStartServiceActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 </LinearLayout>
