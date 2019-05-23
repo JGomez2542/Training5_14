@@ -58,9 +58,24 @@
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
 
     <Button
-            android:id="@+id/btnScheduleService"
-            android:text="Schedule service"
-            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            android:id="@+id/btnCallJobService"
+            android:text="Call Job Service"
+            android:onClick="startJobService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
+    <Button
+            android:id="@+id/btnCallJobDispatcher"
+            android:text="Call Job Dispatcher"
+            android:onClick="startJobDispatcher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            android:id="@+id/btnCallWorkManager"
+            android:text="Call WorkManager"
+            android:onClick="startWorkManager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
 </LinearLayout>

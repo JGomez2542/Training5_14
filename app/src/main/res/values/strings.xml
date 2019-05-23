@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MyTrainingApp</string>
     <string name="collapsing_toolbar">Collapsing Toolbar</string>
+    <string name="notification_channel_name">Worker Channel</string>
+    <string name="work_manager_action">Work Manager</string>
+    <string name="pending_intent_action">Pending Intent</string>
 </resources>

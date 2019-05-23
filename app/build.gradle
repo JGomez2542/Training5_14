@@ -25,6 +25,7 @@ android {
 }
 
 dependencies {
+    def work_version = "1.0.1"
     ext.lifecycle_version = '1.1.1'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -55,6 +56,12 @@ dependencies {
 
     //Eventbus
     implementation 'org.greenrobot:eventbus:3.1.1'
+
+    //WorkManager
+    implementation "android.arch.work:work-runtime-ktx:$work_version"
+
+    //Firebase Job Dispatcher
+    implementation 'com.firebase:firebase-jobdispatcher:0.8.5'
 
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
 }
