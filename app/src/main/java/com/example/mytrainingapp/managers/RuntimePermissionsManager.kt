@@ -2,11 +2,11 @@ package com.example.mytrainingapp.managers
 
 import android.Manifest
 import android.app.Activity
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
 import android.content.pm.PackageManager
-import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.example.mytrainingapp.common.PERMISSIONS_REQUEST_CODE
 
 object RuntimePermissionsManager {

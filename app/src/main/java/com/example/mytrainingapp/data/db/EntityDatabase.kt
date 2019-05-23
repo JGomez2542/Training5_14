@@ -1,7 +1,7 @@
 package com.example.mytrainingapp.data.db
 
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.RoomDatabase
+import androidx.room.Database
+import androidx.room.RoomDatabase
 import com.example.mytrainingapp.common.DATABASE_VERSION
 import com.example.mytrainingapp.data.entities.Entities
 

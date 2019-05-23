@@ -1,7 +1,7 @@
 package com.example.mytrainingapp.factories
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.example.mytrainingapp.activity.MainViewModel
 import com.example.mytrainingapp.data.repository.Repository
 import java.lang.IllegalArgumentException

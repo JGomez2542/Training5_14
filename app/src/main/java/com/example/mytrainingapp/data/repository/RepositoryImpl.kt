@@ -1,8 +1,8 @@
 package com.example.mytrainingapp.data.repository
 
-import android.arch.lifecycle.MediatorLiveData
-import android.arch.persistence.room.Room
 import android.content.Context
+import androidx.lifecycle.MediatorLiveData
+import androidx.room.Room
 import com.example.mytrainingapp.common.DB_NAME
 import com.example.mytrainingapp.data.db.EntityDatabase
 import com.example.mytrainingapp.data.entities.Entities

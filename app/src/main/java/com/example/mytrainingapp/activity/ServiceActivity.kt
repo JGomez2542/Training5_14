@@ -4,10 +4,10 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.example.mytrainingapp.R
 import com.example.mytrainingapp.common.ACTION_BAZ
 import com.example.mytrainingapp.common.ACTION_FOO

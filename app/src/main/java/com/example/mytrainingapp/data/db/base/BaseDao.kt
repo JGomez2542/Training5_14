@@ -1,9 +1,9 @@
 package com.example.mytrainingapp.data.db.base
 
-import android.arch.persistence.room.Delete
-import android.arch.persistence.room.Insert
-import android.arch.persistence.room.OnConflictStrategy
-import android.arch.persistence.room.Update
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Update
 
 interface BaseDao<T> {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
