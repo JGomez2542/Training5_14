@@ -1,15 +1,15 @@
 package com.example.mytrainingapp.activity
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.mytrainingapp.R
 import com.example.mytrainingapp.adapters.RecyclerTypesAdapter
 import com.example.mytrainingapp.common.PERMISSIONS_REQUEST_CODE
@@ -61,7 +61,9 @@ class MainActivity : AppCompatActivity(), RecyclerTypesAdapter.OnClickListener {
         mainViewModel.reyclerTypesLiveData.observe(this, Observer { list ->
             list?.let {
                 val myAdapter = RecyclerTypesAdapter(it, this@MainActivity)
+                recyclerView.apply {
 
+                }
                 recyclerView.apply {
                     addItemDecoration(DividerItemDecoration(this@MainActivity, RecyclerView.VERTICAL))
                     adapter = myAdapter

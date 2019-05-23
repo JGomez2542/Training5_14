@@ -1,6 +1,6 @@
 package com.example.mytrainingapp.data.repository
 
-import android.arch.lifecycle.MediatorLiveData
+import androidx.lifecycle.MediatorLiveData
 import com.example.mytrainingapp.data.entities.Entities
 
 

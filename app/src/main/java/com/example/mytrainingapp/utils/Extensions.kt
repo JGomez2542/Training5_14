@@ -1,10 +1,10 @@
 package com.example.mytrainingapp.utils
 
 import android.content.Context
-import android.support.design.widget.Snackbar
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.mytrainingapp.kotlinReview.Contact
+import com.google.android.material.snackbar.Snackbar
 
 fun Contact.printAll() {
     println("Name:${this.name} Phone:${this.phone} Favorite: ${this.favorite}")

@@ -1,7 +1,7 @@
 package com.example.mytrainingapp.activity
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.mytrainingapp.data.repository.Repository
 import com.example.mytrainingapp.data.entities.Entities
 

@@ -1,9 +1,9 @@
 package com.example.mytrainingapp.adapters
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.example.mytrainingapp.R
 import com.example.mytrainingapp.data.entities.Entities
 import kotlinx.android.extensions.LayoutContainer

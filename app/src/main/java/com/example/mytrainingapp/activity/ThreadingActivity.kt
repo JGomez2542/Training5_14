@@ -1,25 +1,23 @@
 package com.example.mytrainingapp.activity
 
-import android.arch.lifecycle.Observer
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import com.example.mytrainingapp.R
 import com.example.mytrainingapp.common.MSG_KEY
 import com.example.mytrainingapp.data.entities.Entities
 import com.example.mytrainingapp.data.repository.Repository
 import com.example.mytrainingapp.data.repository.RepositoryImpl
-import com.example.mytrainingapp.managers.TaskManager
 import com.example.mytrainingapp.threads.MyRunnable
 import com.example.mytrainingapp.threads.MyThread
 import com.example.mytrainingapp.utils.snackbar
 import com.example.mytrainingapp.utils.toast
 import kotlinx.android.synthetic.main.activity_threading.*
 import kotlinx.coroutines.*
-import java.lang.Exception
 import kotlin.coroutines.CoroutineContext
 
 class ThreadingActivity : AppCompatActivity(), CoroutineScope, Handler.Callback, View.OnClickListener {
