@@ -28,3 +28,4 @@ const val WORK_MANAGER_URL = "https://developer.android.com/topic/libraries/arch
 const val PENDING_INTENT_URL = "https://developer.android.com/reference/android/app/PendingIntent"
 const val WEATHER_BASE_URL = "http://samples.openweathermap.org/"
 const val INTENT_SERVICE_BASE_URL = "http://www.mocky.io/v2/599495951100009403723127"
+const val PERSON_BASE_URL = "http://www.mocky.io/v2/5b73d5ba3500006200531c92"

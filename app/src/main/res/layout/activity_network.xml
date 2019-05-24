@@ -19,4 +19,28 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+            android:id="@+id/btnOkHttpSync"
+            android:text="OkHttp Sync"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="makeCall"
+            app:layout_constraintTop_toBottomOf="@+id/btnNativeHttp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"/>
+    <Button
+            android:id="@+id/btnOkHttpAsync"
+            android:text="OkHttp Async"
+            android:layout_width="0dp"
+            android:onClick="makeCall"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnOkHttpSync"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

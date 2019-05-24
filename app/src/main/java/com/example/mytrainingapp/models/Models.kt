@@ -10,12 +10,14 @@ data class Sys(val pod: String)
 data class Weather(val id: Int, val main: String, val description: String, val icon: String)
 data class WeatherData(val cod: String, val message: Double, val cnt: Int, val list: List<WeatherList>, val city: City)
 data class Wind(val speed: Double, val deg: Double)
+data class RestCallPerson(val name: String, val age: Int, val weight: Int, val nationality: String)
 
 data class WeatherList(
     val dt: Int, val main: Main, val weather: List<Weather>,
     val clouds: Clouds, val wind: Wind, val rain: Rain,
     val sys: Sys, @SerializedName("dt_txt") val dtTxt: String
 )
+
 data class Main(
     val temp: Double,
     @SerializedName("temp_min")
