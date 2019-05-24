@@ -108,6 +108,11 @@ class ServiceActivity : AppCompatActivity(), ServiceConnection {
             intent.action = ACTION_BAZ
             startService(intent)
         }
+
+        btnStartNetworkActivity.setOnClickListener {
+            val intent = Intent(this, NetworkActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun startJobService(view: View) {
