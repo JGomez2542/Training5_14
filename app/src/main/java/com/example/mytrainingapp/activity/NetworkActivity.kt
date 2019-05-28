@@ -21,13 +21,20 @@ import okhttp3.*
 import java.io.IOException
 import com.google.gson.Gson
 import android.util.Log
+import com.example.mytrainingapp.data.remote.RemoteServiceHelper
 import com.example.mytrainingapp.models.RestCallPerson
+import com.example.mytrainingapp.models.WeatherData
+import com.example.mytrainingapp.utils.snackbar
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.activity_network.*
 
 
 class NetworkActivity : AppCompatActivity(), CoroutineScope {
 
     private lateinit var job: Job
     private lateinit var nativeReceiver: NativeReceiver
+    private lateinit var remoteServiceHelper: RemoteServiceHelper
 
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.IO + job
@@ -36,6 +43,7 @@ class NetworkActivity : AppCompatActivity(), CoroutineScope {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_network)
         nativeReceiver = NativeReceiver()
+        remoteServiceHelper = RemoteServiceHelper(this)
         job = Job()
     }
 
@@ -106,6 +114,82 @@ class NetworkActivity : AppCompatActivity(), CoroutineScope {
 
                     }
                 })
+            }
+
+            R.id.btnRetrofitSync -> {
+                val gson = Gson()
+                launch {
+                    try {
+                        val response = remoteServiceHelper.getWeatherData().execute()
+                        val json = response.body()?.string()
+                        val data = gson.fromJson(json, WeatherData::class.java)
+                        Log.d(
+                            this@NetworkActivity::class.java.simpleName,
+                            "City name: ${data.city.name} City Population: ${data.city.population}"
+                        )
+                        checkResponseOrigin(response)
+                    } catch (e: IOException) {
+                        e.printStackTrace()
+                    }
+                }
+            }
+
+            R.id.btnRetrofitAsync -> {
+                val gson = Gson()
+                remoteServiceHelper.getWeatherData().enqueue(object :
+                    retrofit2.Callback<ResponseBody> {
+                    override fun onResponse(
+                        call: retrofit2.Call<ResponseBody>,
+                        response: retrofit2.Response<ResponseBody>
+                    ) {
+                        val json = response.body()?.string()
+                        val data = gson.fromJson(json, WeatherData::class.java)
+                        Log.d(
+                            this@NetworkActivity::class.java.simpleName,
+                            "City name: ${data.city.name} City Population: ${data.city.population}"
+                        )
+                        checkResponseOrigin(response)
+                    }
+
+                    override fun onFailure(call: retrofit2.Call<ResponseBody>, t: Throwable) {
+                        t.printStackTrace()
+                    }
+                })
+
+            }
+
+            R.id.btnRetrofitRxJava -> {
+                remoteServiceHelper.getWeatherDataRxJava()
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe({
+                        Log.d(
+                            this@NetworkActivity::class.java.simpleName,
+                            "City name: ${it.city.name} City Population: ${it.city.population}"
+                        )
+                    }
+                    ) { it.printStackTrace() }
+            }
+
+            R.id.btnRxJavaActivity -> {
+                val intent = Intent(this, RxJavaActivity::class.java)
+                startActivity(intent)
+            }
+        }
+    }
+
+    private fun checkResponseOrigin(response: retrofit2.Response<ResponseBody>) {
+        response.raw()?.cacheResponse()?.let {
+            snackbar(
+                message = "Response was served from cache",
+                action = "Close",
+                rootLayout = networkCL
+            )
+        }
+
+        response.raw()?.networkResponse()?.let {
+            runOnUiThread {
+                toast(message = "Response was served from network/server")
             }
         }
     }

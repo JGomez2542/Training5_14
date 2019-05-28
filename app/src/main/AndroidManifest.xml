@@ -11,8 +11,10 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:usesCleartextTraffic="true"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:usesCleartextTraffic="true">
+        <activity android:name=".activity.RxJavaActivity">
+        </activity>
         <activity android:name=".activity.NetworkActivity">
         </activity>
         <activity android:name=".activity.ServiceActivity">

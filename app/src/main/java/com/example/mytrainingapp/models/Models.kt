@@ -11,6 +11,7 @@ data class Weather(val id: Int, val main: String, val description: String, val i
 data class WeatherData(val cod: String, val message: Double, val cnt: Int, val list: List<WeatherList>, val city: City)
 data class Wind(val speed: Double, val deg: Double)
 data class RestCallPerson(val name: String, val age: Int, val weight: Int, val nationality: String)
+data class RxJavaPerson(val name: String, val friends: List<String>)
 
 data class WeatherList(
     val dt: Int, val main: Main, val weather: List<Weather>,

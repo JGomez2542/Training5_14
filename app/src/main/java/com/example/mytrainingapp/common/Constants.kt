@@ -1,5 +1,6 @@
 package com.example.mytrainingapp.common
 
+//Misc
 const val PERMISSIONS_REQUEST_CODE = 0
 const val DATABASE_VERSION = 1
 const val DB_NAME = "Entities"
@@ -14,6 +15,8 @@ const val WORK_MANAGER_PENDING_INTENT_ID = 2
 const val PENDING_INTENT_PENDING_INTENT_ID = 10
 const val LAUNCHER_PENDING_INTENT_ID = 10
 const val NATIVE_RECEIVER_ACTION = "NATIVE_RECEIVER_ACTION"
+const val ZIP = "94040"
+const val APPID = "b1b15e88fa797225412429c1c50c122a1"
 
 //Keys
 const val KEY_CUSTOM = "custom_key"
